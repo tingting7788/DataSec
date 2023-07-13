@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 引入Bootstrap CSS -->
+    {css href="/static/css/bootstrap.min.css"}
+    {css href="/static/css/style.css"}
+
+    <!-- 移动设备优先-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit-no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<!-- 引入js文件 -->
+{js href="/static/js/jquery-3.3.1.min.js"}
+{js href="/static/js/bootstrap.bundle.min.js"}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <!--菜单-->
+            {include file='public/menu' /}
+        </div>
+        <div class="col-10">
+            <table class="table">
+                <thead>
+
+                <tr>
+                    <th scope="col">序号</th>
+                    <th scope="col">数据库地址</th>
+                    <th scope="col">数据库名</th>
+                    <th scope="col">数据库表</th>
+                    <th scope="col">异常</th>
+                    <th scope="col">时间</th>
+                    <th scope="col">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {volist id="obj" name="list"}
+                <tr>
+                    <th scope="row">{$obj.id}</th>
+                    <td>{$obj.db_address}</td>
+                    <td>{$obj.db_name}</td>
+                    <td>{$obj.db_table}</td>
+                    <td>{$obj.abnormal}</td>
+                    <td>{$obj.creation}</td>
+                    <td>
+                        <a href="">编辑</a>
+                        <a href=""></a>
+                    </td>
+                </tr>
+                {/volist}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
