@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 引入Bootstrap CSS -->
+    {css href="/static/css/bootstrap.min.css"}
+    {css href="/static/css/style.css"}
+
+    <!-- 移动设备优先-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit-no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<!-- 引入js文件 -->
+{js href="/static/js/jquery-3.3.1.min.js"}
+{js href="/static/js/bootstrap.bundle.min.js"}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <!--菜单-->
+            {include file='public/menu' /}
+        </div>
+        <div class="col-10">
+            <h3>添加数据库</h3>
+            <form action="{:url('/dbconf/update')}" method="post">
+                <div class="input-group mb-3">
+                    <input type="hidden" name="id" value="{$info.id}"/>
+                    <input type="text" name="db_address" class="form-control" placeholder="数据库地址"
+                           value="{$info.db_address}"
+                           aria-label="Username">
+                    <input type="text" name="db_post" class="form-control" placeholder="端口" value="{$info.db_post}">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" name="db_post" class="form-control" placeholder="数据库名" value="{$info.db_name}">
+                    <input type="text" name="db_user" class="form-control" placeholder="用户名" aria-label="Username"
+                           value="{$info.db_user}"
+                           aria-describedby="basic-addon1">
+                    <input type="pass" name="db_pass" class="form-control" placeholder="密码" value="{$info.db_pass}">
+                </div>
+                <button>修改数据库</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -17,9 +17,9 @@
 {js href="/static/js/bootstrap.bundle.min.js"}
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-2">
+        <div class="col-2 mx-auto" style="width: 200px;">
             <!--菜单-->
             {include file='public/menu' /}
         </div>
@@ -43,11 +43,11 @@
                     <th scope="row">{$obj.id}</th>
                     <td>{$obj.url}</td>
                     <td>{$obj.abnormal}</td>
-                    <td><a href="">查看详情</a></td>
+                    <td><a href=""  class="btn btn-sm btn-outline-info">查看详情</a></td>
                     <td>{$obj.creation}</td>
                     <td>
-                        <a href="">编辑</a>
-                        <a href=""></a>
+                        <a href=""  class="btn btn-sm btn-outline-info">编辑</a>
+                        <a href=""  class="btn btn-sm btn-outline-danger">删除</a>
                     </td>
                 </tr>
                 {/volist}

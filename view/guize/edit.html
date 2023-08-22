@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 引入Bootstrap CSS -->
+    {css href="/static/css/bootstrap.min.css"}
+    {css href="/static/css/style.css"}
+
+    <!-- 移动设备优先-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit-no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<!-- 引入js文件 -->
+{js href="/static/js/jquery-3.3.1.min.js"}
+{js href="/static/js/bootstrap.bundle.min.js"}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <!--菜单-->
+            {include file='public/menu' /}
+        </div>
+        <div class="col-10">
+            <h3>修改正则表达式</h3>
+            <form action="{:url('/guize/update')}" method="post">
+                <div class="input-group mb-3">
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <input type="text" name="biaoqian" value="{$list.biaoqian}"/>
+                    <input type="text" name="guize" class="form-control" value="{$list.guize}">
+                </div>
+                <button class="btn btn-sm btn-outline-info">修改表达式</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

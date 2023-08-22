@@ -30,13 +30,9 @@
 
                 <tr>
                     <th scope="col">序号</th>
-                    <th scope="col">地址</th>
-                    <th scope="col">库名</th>
-                    <th scope="col">表名</th>
-                    <th scope="col">异常数据</th>
                     <th scope="col">标签</th>
-                    <th scope="col">原始数据</th>
-                    <th scope="col">时间</th>
+                    <th scope="col">正则表达式</th>
+                    <th scope="col">创建时间</th>
                     <th scope="col">操作</th>
                 </tr>
                 </thead>
@@ -45,15 +41,11 @@
                 {volist id="obj" name="list"}
                 <tr>
                     <th scope="row">{$obj.id}</th>
-                    <td>{$obj.db_address}</td>
-                    <td>{$obj.db_name}</td>
-                    <td>{$obj.db_table}</td>
-                    <td>{$obj.abnormal}</td>
-                    <td><span class="badge bg-info text-light">{$obj.biaoqian}</span></td>
-                    <td><textarea class="form-control" disabled="disabled">{$obj.raw}</textarea></td>
-                    <td>{$obj.create_time}</td>
+                    <th scope="row">{$obj.biaoqian}</th>
+                    <td><textarea class="form-control" disabled="disabled">{$obj.guize}</textarea></td>
+                    <td>{$obj.creation}</td>
                     <td>
-                        <a href=""  class="btn btn-sm btn-outline-info">编辑</a>
+                        <a href="{:url('/guize/edit',['id'=>$obj['id']])}" class="btn btn-sm btn-outline-info">编辑</a>
                         <a href=""  class="btn btn-sm btn-outline-danger">删除</a>
                     </td>
                 </tr>
