@@ -1,56 +1,32 @@
-ThinkPHP 6.0
-===============
+## 背景
+2021年数据安全法的颁布，由于政策驱动，各家企业对数据安全的关注度增加。我所在的公司也不例外，我作为一名安全工程师，我的工作内容就包含检测数据安全部分，需要检测业务系统在使用数据过程中是否存在违规情况，比如密码、银行卡字段明文存储在数据库。
 
-> 运行环境要求PHP7.2+，兼容PHP8.1
+之前刚开始去做这个事情的时候，我是手工从数据库中逐个检测数据表的内容是否存在违规数据，这个过程非常耗时且效率极低。比如之前我有100个库，每个里面有100个表，光打开它们就需要一定的时间，更别提对里面的字段内容进行检查
 
-[官方应用服务市场](https://market.topthink.com) | [`ThinkAPI`——官方统一API服务](https://docs.topthink.com/think-api)
+为了提升这方面的工作效率，我写了一个工具，使用这个工具来进行检测可以大幅度提升工作效率。
 
-ThinkPHPV6.0版本由[亿速云](https://www.yisu.com/)独家赞助发布。
+而且我只需维护数据库配置和检测规则，工具会自动对每个数据库执行检测任务，并对分析库中的表数据和生成报告。
 
-## 主要新特性
 
-* 采用`PHP7`强类型（严格模式）
-* 支持更多的`PSR`规范
-* 原生多应用支持
-* 更强大和易用的查询
-* 全新的事件系统
-* 模型事件和数据库事件统一纳入事件系统
-* 模板引擎分离出核心
-* 内部功能中间件化
-* SESSION/Cookie机制改进
-* 对Swoole以及协程支持改进
-* 对IDE更加友好
-* 统一和精简大量用法
+以下是产品的功能介绍
+#### 数据库
 
-## 安装
+下图中可以看到：已将不符合数据安全规范的异常数据标记出来，并告知异常数据来源自某数据库、数据表。
+![](http://oss.songboy.site/blog/9625043390c083c50e7d242a5c659d0.png)
 
-~~~
-composer create-project topthink/think tp 6.0.*
-~~~
+#### 规则列表
 
-如果需要更新框架使用
-~~~
-composer update topthink/framework
-~~~
+在此处添加检测规则并对应标签，当在数据库中检测到符合的规格将会展示在菜单“数据库”，并打上标签
+![](http://oss.songboy.site/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230817233045.png)
 
-## 文档
+![](http://oss.songboy.site/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230817232624.png)
 
-[完全开发手册](https://www.kancloud.cn/manual/thinkphp6_0/content)
+#### 数据库配置
 
-## 参与开发
+在此处添加所要检测的数据库地址，添加完成后会根据规则列表去检索符合规则的数据，检查结果在菜单“数据库”中查看
+![](http://oss.songboy.site/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230817232922.png)
 
-请参阅 [ThinkPHP 核心框架包](https://github.com/top-think/framework)。
 
-## 版权信息
+## 作者：婷婷的橙子 
+![](http://oss.songboy.site/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230822233737%20(1).png)
 
-ThinkPHP遵循Apache2开源协议发布，并提供免费使用。
-
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
-
-版权所有Copyright © 2006-2021 by ThinkPHP (http://thinkphp.cn)
-
-All rights reserved。
-
-ThinkPHP® 商标和著作权所有者为上海顶想信息科技有限公司。
-
-更多细节参阅 [LICENSE.txt](LICENSE.txt)
